@@ -1,1 +1,59 @@
 
+class animal:
+	def __init__(self, name, nombre):
+		self.name=name
+		self.nombre=nombre
+
+class Mammifère(animal):
+        
+        def __init__(self, name, nombre, nombre_de_patte, quantité_nourriture, domestique, régime_alimentaire):
+            
+                 super().__init__(name, nombre)            
+                 self.domestique=domestique
+                 self.nombre_de_patte=nombre_de_patte
+                 self.quantité_nourriture=quantité_nourriture
+                 self.régime_alimentaire=régime_alimentaire
+                 
+        def __str__(self): 
+           return str(self.nombre)+ "   "+ str(self.nombre_de_patte) +"   " +str(self.quantité_nourriture)+ " "+str(self.domestique)+ " "+self.régime_alimentaire
+
+class Marin(animal):
+         
+         def __init__(self, name, nombre, quantité_nourriture, domestique, régime_alimentaire):
+                 super().__init__(name, nombre)
+                 self.domestique=domestique
+                 self.quantité_nourriture=quantité_nourriture
+                 self.régime_alimentaire=régime_alimentaire
+         def __str__(self): 
+            return str(self.nombre)+"   " +str(self.quantité_nourriture)+ "  "+ str(self.domestique)+ " "+self.régime_alimentaire
+class volant(animal):
+        
+        def __init__(self, name, nombre, nombre_de_patte,quantité_nourriture, domestique, régime_alimentaire):
+                 super().__init__(name, nombre)
+                 self.domestique=domestique
+                 self.nombre_de_patte=nombre_de_patte
+                 self.quantité_nourriture=quantité_nourriture
+                 self.régime_alimentaire=régime_alimentaire
+        def __str__(self): 
+            return str(self.nombre)+ "   "+ str(self.nombre_de_patte) +"   " +str(self.quantité_nourriture)+ " "+str(self.domestique)+ " "+self.régime_alimentaire
+        
+if __name__ == "__main__":
+
+    
+    zoo = {}
+    zoo["Humain"] = Mammifère("Humain", 2, 2 , 600, False, "Omnivore")
+    zoo["Lion"] = Mammifère("Lion", 1, 4, 3, False, "Carnivore") 
+    zoo["Dauphin"] = Mammifère("Dauphin", 3, 1, 5, False, "carnivore") 
+    zoo["Lapin"] = Mammifère("Lapin", 7, 4, 100, False, "Végétarien") 
+    zoo["Mouton"] = Mammifère("Mouton", 5, 4, 500, True, "Végétarien")
+    zoo["Chien"] = Mammifère("Chien", 2, 4, 500, True ,"Omnivore")
+    zoo["Pieuvre"] = Marin("Pieuvre", 1, 200, True, "carnivore")
+    zoo["Serpent"] = Marin("Serpent", 2, 200, False, "Carnivore")
+    zoo["Autruche"] = volant("Autruche", 4, 2, 1, False, "Omnivore")
+    zoo["Poule"] = volant("Poule", 8, 2, 200, False, "Omnivoire")        
+
+    for my_key in zoo:
+               print(my_key + " " + str(zoo[my_key]))
+        
+
+
